@@ -759,10 +759,16 @@ body {
   font-family: 'ZillaSlabR';
   font-size: 18px;
   color: #fff;
-  text-align: justify;
   text-indent: 20px;
   line-height: 1.5;
   text-shadow: 0 1px 2px #000;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.about__description-text p {
+  margin: 0;
 }
 
 .resume {
@@ -847,7 +853,6 @@ body {
 
 .description-item__text {
   font-family: 'ZillaSlabR';
-  text-align: justify;
   font-size: 18px;
 }
 
@@ -944,6 +949,7 @@ body {
   text-align: center;
   font-family: 'BreeSerifR';
   line-height: 1.5;
+  font-size: 18px;
 }
 
 .works {
