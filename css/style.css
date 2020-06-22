@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -342,39 +343,17 @@ template {
 }
 
 @font-face {
-  font-family: "BitterR";
-  src: url("../fonts/Bitter-Regular.ttf") format("truetype");
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "BreeSerifR";
-  src: url("../fonts/BreeSerif-Regular.ttf") format("truetype");
-  font-weight: normal;
-}
-
-@font-face {
   font-family: "CourgetteR";
   src: url("../fonts/Courgette-Regular.ttf") format("truetype");
   font-weight: normal;
 }
 
 @font-face {
-  font-family: "ZillaSlabB";
-  src: url("../fonts/ZillaSlab-Bold.ttf") format("truetype");
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "ZillaSlabL";
-  src: url("../fonts/ZillaSlab-Light.ttf") format("truetype");
-  font-weight: lighter;
-}
-
-@font-face {
-  font-family: "ZillaSlabR";
-  src: url("../fonts/ZillaSlab-Regular.ttf") format("truetype");
+  font-family: 'MyriadPro';
+  src: url("../fonts/MyriadProRegular.eot");
+  src: local("☺"), url("../fonts/MyriadProRegular.woff") format("woff"), url("../fonts/MyriadProRegular.ttf") format("truetype"), url("../fonts/MyriadProRegular.otf") format("opentype");
   font-weight: normal;
+  font-style: normal;
 }
 
 .promo {
@@ -427,16 +406,12 @@ template {
 }
 
 .promo__text-title {
-  font-family: 'BitterR';
   font-size: 64px;
-  background: -webkit-gradient(linear, left top, right top, color-stop(29%, #FF9200), color-stop(44%, #BF8230), color-stop(34%, #A65F00));
-  background: linear-gradient(to right, #FF9200 29%, #BF8230 44%, #A65F00 34%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #A65F00;
+  text-shadow: 0 0 5px #000;
 }
 
 .promo__text-description {
-  font-family: 'BreeSerifR';
   font-size: 26px;
   color: #fff;
   max-width: 650px;
@@ -527,6 +502,7 @@ ul {
 
 body {
   overflow-x: hidden;
+  font-family: 'MyriadPro', sans-serif;
 }
 
 .container {
@@ -601,7 +577,6 @@ body {
 }
 
 .header__link {
-  font-family: 'ZillaSlabL';
   margin-right: 18px;
   font-size: 18px;
 }
@@ -749,20 +724,18 @@ body {
 }
 
 .about__description-title {
-  font-family: 'ZillaSlabB';
   font-size: 26px;
   text-transform: capitalize;
   text-align: center;
 }
 
 .about__description-text {
-  font-family: 'ZillaSlabR';
   font-size: 18px;
   color: #fff;
   text-indent: 20px;
   line-height: 1.5;
   text-shadow: 0 1px 2px #000;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.4);
   border-radius: 5px;
   padding: 15px;
 }
@@ -805,7 +778,6 @@ body {
 }
 
 .resume__title {
-  font-family: 'ZillaSlabB';
   font-size: 20px;
   color: #BF8230;
   text-shadow: 0 1px 2px #000;
@@ -836,24 +808,17 @@ body {
   padding-top: 50px;
 }
 
-.description-item__title {
-  font-family: 'BreeSerifR';
+.description-item__title, .description-item__text {
   font-size: 18px;
 }
 
 .description-item__info {
-  font-family: 'BitterR';
   font-size: 14px;
   font-style: italic;
 }
 
 .description-item__info span {
   font-weight: bold;
-}
-
-.description-item__text {
-  font-family: 'ZillaSlabR';
-  font-size: 18px;
 }
 
 .description-item__certificats {
@@ -925,7 +890,6 @@ body {
 }
 
 .title {
-  font-family: 'BitterR';
   font-size: 24px;
   text-transform: uppercase;
   position: relative;
@@ -947,7 +911,6 @@ body {
 .text {
   max-width: 600px;
   text-align: center;
-  font-family: 'BreeSerifR';
   line-height: 1.5;
   font-size: 18px;
 }
@@ -961,23 +924,34 @@ body {
 }
 
 .works__container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto;
-      grid-template-columns: auto;
-  -ms-grid-rows: (250px)[3];
-      grid-template-rows: repeat(3, 250px);
-  grid-row-gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: -10px -10px;
 }
 
 .works__item {
-  background-color: #9e5406;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 33.333%;
+          flex: 0 1 33.333%;
+  min-height: 255px;
   margin: 0;
+  padding: 10px 10px;
+  -webkit-box-shadow: 0 5px 15px rgba(165, 48, 13, 0.4);
+          box-shadow: 0 5px 15px rgba(165, 48, 13, 0.4);
+}
+
+.works__item figure {
+  background-color: #9e5406;
   position: relative;
   overflow: hidden;
   float: left;
-  -webkit-box-shadow: 0 5px 15px rgba(165, 48, 13, 0.4);
-          box-shadow: 0 5px 15px rgba(165, 48, 13, 0.4);
+  height: 100%;
 }
 
 .works__item:hover .works__image {
@@ -1074,7 +1048,6 @@ body {
 }
 
 .works__about {
-  font-family: 'ZillaSlabL';
   font-weight: bold;
   padding: 20px 15px;
   opacity: 0;
@@ -1094,7 +1067,6 @@ body {
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
   z-index: 10;
-  font-family: 'ZillaSlabL';
   font-size: 18px;
   text-transform: capitalize;
   color: #fff;
@@ -1112,7 +1084,6 @@ body {
 }
 
 .skills__col span {
-  font-family: 'ZillaSlabB';
   font-size: 22px;
   display: block;
   margin-bottom: 30px;
@@ -1187,7 +1158,6 @@ body {
 }
 
 .contacts__heart {
-  font-family: 'ZillaSlabL';
   text-transform: capitalize;
   font-size: 20px;
 }
@@ -1200,7 +1170,6 @@ body {
 }
 
 .contacts__copyright {
-  font-family: 'ZillaSlabR';
   font-size: 14px;
 }
 
@@ -1335,16 +1304,6 @@ body {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1/2;
-  }
-}
-
-@media all and (min-width: 920px) {
-  .works__container {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
-    -ms-grid-rows: 250px;
-        grid-template-rows: 250px;
-    grid-column-gap: 10px;
   }
 }
 
